@@ -6,65 +6,66 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 </head>
-<body class = "alert alert-info" role="alert">
+<body>
 		<!-- Just an image -->
-	<nav class="navbar navbar-brand alert alert-info" role="alert>
-	  <a class="nav-link" href="#">
-	    <i class="fas fa-user-plus"> SignUp</i>
-	  </a>
-	</nav>
-	<div class="text-left pl-5 pt-4"><h1 class="text-uppercase">Medicare</h1></div>
-		<img src="main1.jpg" class="rounded float-right pr-5" style="width:38%">
+	<nav class="navbar navbar-expand-lg navbar-trans bg-inverse">
+	  <a class="navbar-brand" href="#"><h1 class = "font-weight-bold font-italic text-dark text-uppercase" style="padding-left: 50%">Medicare</h1></a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	    <ul class="navbar-nav mr-auto">
+	      <li class="nav-item SignUp">
+	        <a class="nav-link text-success" href="#">SignUp<span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Login</a>
+	      </li>
+	     </ul>
+ 	 </div>
+ 	</nav>
+		<img src="main1.jpg" class="rounded float-right pt-2 pr-3" style="width:35%">
 		<div class = "text-info head"><h1 class="text-uppercase">Medical Record Storage Online</h1></div>
 			
 			<div class = "text-dark sub"><p class="font-light-weight">Keep Track Of Your Medical History Using Medicare</p></div>
-				<i class = "fas fa-prescription fa-4x fon "></i>
-				<i class="fas fa-stopwatch fa-4x fon1"></i>
-				<i class="fas fa-user-nurse fa-4x fon2"></i>
-
-				<div class="card-group pt-2" style="width:100%;">
-					  <div class="card pl-5 pt-3 pr-5 alert alert-info" role="alert">
-					    <img class="card-img-top rounded-circle" src="prescription.jpg" style = "height:55%;"alt="Card image cap">
-					    <div class="card-body alert alert-info" role="alert">
-					      	<h5 class="card-title text-center">Records in Hand</h5>
-						    <p class="card-text">Store Prescriptions and access at any time from anywhere.</p>
-						    <!-- <a href="#" class="btn btn-primary bg-success">Go somewhere</a> -->
-						    <div class="accordion" id="accordionExample">
-							  <div class="card alert alert-info" role="info">
-							    <div class="card-header" id="headingOne">
-							      <h5 class="mb-0">
-							        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							          More About Your Medical Reports#
-							        </button>
-							      </h5>
-							    </div>
-
-							    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-							      <div class="card-body">
-							        Generally in our daily life,we use to forget the previous medical Prescriptions.This website is the right Platform to store those Prescriptions.You can access your Prescriptions and important Medical Reports from at any time from any where.
-							      </div>
-							    </div>
-							  </div>
-							 </div>
-					    </div>
-					  </div>
-					  <div class="card pl-5 pt-3 pr-5 alert alert-info" role="alert">
-					    <img class="card-img-top rounded-circle" src="remainder.jpg" style = "height:55%;" alt="Card image cap">
-					    <div class="card-body alert alert-info" role="alert">
-					      	<h5 class="card-title">Card title</h5>
-						    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						    <a href="#" class="btn btn-primary alert alert-info" role = "alert">Go somewhere</a>
-					    </div>
-					  </div>
-					  <div class="card pl-5 pt-3 pr-5 alert alert-info" role="alert">
-					    <img class="card-img-top rounded-circle" src="forum.jpg" style = "height:55%;" alt="Card image cap">
-					    <div class="card-body alert alert-info" role="alert"	>
-					      	<h5 class="card-title">Card title</h5>
-						    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						    <a href="#" class="btn btn-primary alert alert-info" role="alert">Go somewhere</a>
-					    </div>
-					  </div>
+				<div class="icons">
+					<i class = "fas fa-prescription fa-4x fon "></i>
+					<i class="fas fa-stopwatch fa-4x fon1"></i>
+					<i class="fas fa-user-nurse fa-4x fon2"></i>
 				</div>
+			<div class="card-group" style="margin-top: 6%;">
+			  <div class="card border border-warning alert alert-warning" role="alert">
+			    <img class="card-img-top bg-light border border-danger" src="prescription.jpg" style="width:350px;height:200px;margin-top: 5%;" alt="Card image cap">
+			    <div class="card-body">
+			      <h5 class="card-title text-center">Card title</h5>
+			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			    </div>
+			    <div class="card-footer">
+			      <small class="text-muted">Last updated 3 mins ago</small>
+			    </div>
+			  </div>
+			  <div class="card border border-success alert alert-info" role="alert">
+			    <img class="card-img-top bg-light border border-danger" src="remainder.jpg" style="width:297px;height:180px;margin-left: 20%;margin-top: 5%;" alt="Card image cap">
+			    <div class="card-body">
+			      <h5 class="card-title text-center">Card title</h5>
+			      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+			    </div>
+			    <div class="card-footer">
+			      <small class="text-muted">Last updated 3 mins ago</small>
+			    </div>
+			  </div>
+			  <div class="card border border-danger alert alert-success" role="alert">
+			    <img class="card-img-top bg-light border border-danger" src="forum.jpg" style="width:297px;height:180px;margin-left: 20%;margin-top: 5%;" alt="Card image cap">
+			    <div class="card-body">
+			      <h5 class="card-title text-center">Card title</h5>
+			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+			    </div>
+			    <div class="card-footer">
+			      <small class="text-muted">Last updated 3 mins ago</small>
+			    </div>
+			  </div>
+			</div>
+			</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>		
