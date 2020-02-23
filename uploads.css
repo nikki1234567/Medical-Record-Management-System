@@ -8,10 +8,12 @@ body{
 
 .bg-text{
 /*	background-color: #e9efebf0;
-*/	background-color: #dee2e66e;
+*/	background-color: #dee2e6a1;
+    
+    
 	height:450px;
-	width: 40%;
-	margin-top: 5%;
+	width: 80%;
+	margin-top: 100px;
 	margin-left: 40px;
 	border-style: groove;
 	border-color: #e9efeb2e;
@@ -20,25 +22,56 @@ body{
 */
 }
 
-.bg1-text{
-/*    background-color: #e9efebf0;
+.prescription-text{
 
-*/	background-color: #dee2e66e;
+	background-color: #dae0e5b0;
+
+	height: 190px;
+	width:60%;
+	
+	font-size: 20px;
+	margin-top: 150px;
+	padding-left: 10px;
+
+	text-shadow: 0.5px 0.5px black;
+	word-spacing: 4px;
+
+	
+
+	
+
+}
+.bg1-text{
+	background-color: #dee2e6a1;
     height:510px;
-	width: 40%;
+	width: 80%;
 	margin-top: 10%;
-	margin-left: 800px;
+	
+	margin-left: 12%;
 	margin-bottom: 100px;
-	margin-right: 40px;
 	border-style: groove;
 	border-color: #e9efeb2e;
 	border-width: 1px;
 
 }
 
+.report-text{
+	background-color: #dae0e5b0;
+	height: 190px;
+	width:60%;
+	margin-left: 40px;
+	margin-top: 20%;
+		font-size: 20px;
+		text-shadow: 0.5px 0.5px black;
+	word-spacing: 4px;
+
+
+}
+
 .bg2-text{
-	background-color: #dee2e66e;
+	background-color: #dee2e6a1;
 	height:510px;
+	float: left;
 	width: 40%;
 	margin-top: 10%;
 	margin-left: 40px;
