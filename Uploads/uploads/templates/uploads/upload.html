@@ -1,0 +1,185 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Uploads</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'uploads/css/uploads.css' %}">
+
+
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-right: 3rem">
+	  <span class="navbar-brand mb-0 h1" style="padding-left: 10rem;">MediCare</span>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+	    <ul class="navbar-nav ml-auto">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Tablet Notifications</a>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Upload
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	          <a class="dropdown-item" href="#">Prescriptions</a>
+	          <a class="dropdown-item" href="#">Reports</a>
+	        </div>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Search
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	          <a class="dropdown-item" href="#">Prescriptions</a>
+	          <a class="dropdown-item" href="#">Reports</a>
+	        </div>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Forum</a>
+	      </li>
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Login</a>
+	        <li class="nav-item active">
+	        <a class="nav-link" href="#">Sign Up</a>
+	      </li>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="thumbnail">
+
+	        <div class="bg-text">
+				<div class="upload_heading">
+
+
+					<p><i class="fas fa-prescription"></i>	Prescriptions </p>
+
+				</div>
+				<form method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+
+					<div class="form-group">
+					    <label for="HospName">Hospital Name</label>
+					    <input name="hospital_name" type="text" class="form-control" id="hospital_name" placeholder="Enter hospital name" required>
+		            </div>
+		            <div class="form-group">
+					    <label for="Disease">Disease</label>
+					    <input name="disease_name" type="text" class="form-control" id="disease_name" placeholder="Enter hospital name" required>
+					</div>
+					<div class="form-group">
+					    <label for="FileName">File Name</label>
+					    <input name="file_name" type="text" class="form-control" id="file_name" placeholder="Enter file name" required>
+		            </div>
+					
+					<div class="form-group">
+					    <label for="UploadPres">Prescription</label>
+					       <input name="prescription_file" type="file" class="form-control-file" id="FormControlFile1" required>
+	                </div>
+	                
+	                
+	                <div class="form-group">
+
+	                    <button type="submit" class="btn btn-primary">Submit</button>
+	                </div>    
+				
+			  </form>
+			</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+		
+		    <div class="prescription-text">
+				<p>It's okay to scatter your Documents and Medical reports in your busy life. 
+				We are there for you to keep your Medical reports Organised. So Why late? Just upload your prescriptions here</p>
+			</div>
+		</div>
+	</div>	
+		
+
+	<div class="row">
+		<div class="col-lg-6">
+
+
+			<div class="report-text">
+		    	<p>Today it's not easy to carry Reports everywhere you go
+	               so here we are to carry your reports in a feasible way
+	              Just Upload your reports here to make it handy to you</p>
+		    </div> 
+	    </div>
+
+
+        <div class="col-lg-6">
+		
+		     <div class="bg1-text">
+
+		    	<div class="upload_heading">
+					<p><i class="fas fa-file-medical"></i>	Reports</p>
+				</div>
+				<form  method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+
+					<div class="form-group">
+					    <label for="Diagname">Diagnostics Name</label>
+					    <input name="diagnostics_name" type="text" class="form-control" id="diagnostics_name" placeholder="Enter diagnostic center name" required>
+		            </div>
+		            <div class="form-group">
+					    <label for="Report-type">Report type</label>
+					    <input name="report_type" type="text" class="form-control" id="report_type" placeholder="Enter report type" required>
+					</div>
+					<div class="form-group">
+					    <label for="FileName1">File Name</label>
+					    <input name="file_name" type="text" class="form-control" id="file_name1" placeholder="Enter file name" required>
+		            </div>
+
+		            <div class="form-group">
+					    <label for="Date">Date</label>
+					    <input name="date" type="date" class="form-control" id="date" placeholder="Enter date" required>
+		            </div>
+
+					
+					<div class="form-group">
+					    <label for="UploadReport">Reports</label>
+					       <input name="report_file" type="file" class="form-control-file" id="FormControlFile1">
+	                </div>
+	                
+	                
+	                <div class="form-group">
+
+	                    <button type="submit" class="btn btn-primary">Submit</button>
+	                </div>    
+				
+			  </form>
+
+			  </div>
+
+    
+	    	
+	    </div>
+	</div>
+
+	    
+
+	    
+	    
+
+</body>
+</html>
+

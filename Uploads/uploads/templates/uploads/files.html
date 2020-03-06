@@ -1,0 +1,64 @@
+{% block content %}
+
+<h1>All Files</h1>
+
+<h2>Prescriptions</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Hospital Name</th>
+            <th>Disease Name</th>
+            <th>File Download</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        {% for file in prescriptions %}
+        <tr>
+            <td>{{file.hospital_name}}</td>
+            <td>{{file.disease_name}}</td>
+            <td>{{file.file_name}}</td>
+            <td>
+                <a href="{{file.prescription_file.url}}" class ="btn btn-primary btn-sm" target="_blank">Download File</a>
+                
+            </td>
+
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+
+<h2>Reports</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Diagnostics Name</th>
+            <th>Report Type</th>
+            <th></th>
+            <th>Date</th>
+            <th>File Download</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        {% for file in reports %}
+        <tr>
+            <td>{{file.diagnostics_name}}</td>
+            <td>{{file.report_type}}</td>
+            <td>{{file.file_name}}</td>
+            <td>{{file.date}}</td>
+
+            <td>
+                <a href="{{file.report.url}}" class ="btn btn-primary btn-sm" target="_blank">Download File</a>
+                
+            </td>
+
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+
+{%endblock%}
+
