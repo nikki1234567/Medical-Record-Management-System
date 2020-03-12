@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Landing Page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'LandingPage/style.css' %}">
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 	 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Merienda&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Upright|Peralta&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+</head>
+<body>
+		<!-- Just an image -->
+	<nav class="navbar navbar-expand-lg bg-trans bg-inverse" role="alert">
+	  <a class="navbar-brand"  href="#" style="color:red;"><h1 class = "my-firstfont text-dark text-uppercase " style="margin-left:100%;color: rgb(224, 64, 152);">Medicare</h1></a>
+	 <!-- <h1 class = "navbar-brand my-firstfont text-dark text-uppercase">Medicare</h1> -->
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  
+		{% if request.user.is_authenticated %}
+		<div class="collapse navbar" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto nav justify-content-end">
+				<li class="nav-item login">
+	       			<a class="nav-link text-dark" href="{% url 'home' %}"><h2>Home</h2></a>
+	      		</li>
+	      	<ul class="nav navbar-nav justify-content-end">
+		      <li class="nav-item signup pr-2">
+		        <a class="nav-link text-dark" href="{% url 'logout' %}"><h2>Logout</h2><span class="sr-only">(current)</span></a>
+		      </li>
+		   </ul>
+		  </div>
+		{% else %}
+		<div class="collapse navbar" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto nav justify-content-end">
+				<li class="nav-item login">
+	       			<a class="nav-link text-dark" href="{% url 'login' %}"><h2>Login</h2></a>
+	      		</li>
+	      	<ul class="nav navbar-nav justify-content-end">
+		      <li class="nav-item signup pr-2">
+		        <a class="nav-link text-dark" href="{% url 'register' %}"><h2>SignUp</h2><span class="sr-only">(current)</span></a>
+		      </li>
+		   </ul>
+		  </div>
+		{% endif %}
+ 	</nav>
+		<img src=" {% static 'LandingPage/img/medicalrecords.jpeg' %} " class="border border-dark float-right mt-5" style="width:500px;height:250px;margin-right:5%;">
+		<div class = "text-info head"><h1 style="color:rgb(116, 230, 211);">Medical Record Storage Online</h1></div>
+			
+			<div class = "text-dark pr-5 sub"><p class="font-light-weight">Keep Track Of Your Medical History Using Medicare</p></div>
+				<div class="icons">
+					<i class = "fas fa-prescription fa-4x fon "></i>
+					<i class="fas fa-stopwatch fa-4x fon1"></i>
+					<i class="fas fa-user-nurse fa-4x fon2"></i>
+				</div>
+				<!-- <div class="wrapper">
+					<div class="box">
+						<img class="bg-light border border-danger" src=" {% static 'LandingPage/img/forum.jpg' %} " style="width:297px;height:180px;margin-top: 70px;">
+					</div>
+					<div class="box">
+						<img class="bg-light border border-danger" src=" {% static 'LandingPage/img/forum.jpg' %} " style="width:297px;height:180px;margin-top: 70px;">
+					</div>
+					<div class="box">
+						<img class="bg-light border border-danger" src=" {% static 'LandingPage/img/forum.jpg' %} " style="width:297px;height:180px;margin-top: 70px;">
+					</div>
+				 
+				 </div> -->
+				
+			<div class="card-group mt-5" style="padding-top:5.2%;">
+			  <div class="card col-sm-4 border border-warning" style="background-color: rgb(146, 212, 179);">
+			    <img class="card-img-top bg-light border border-warning" src=" {% static 'LandingPage/img/prescription.jpg' %} " style="width:297px;height:180px;" alt="Card image cap">
+			    <div class="card-body">
+			      <h4 class="card-title text-center">Records in Your Hand</h4>
+			      <h5 class="card-text"><span class="my-font">Generally in our Daily Life,we use to forget our previous medical prescriptions.This Website is the best platform to store those Prescriptions</span></h5>
+			    </div>
+			  </div>
+			  <div class="card col-sm-4 border border-success alert alert-info" role="alert">
+			    <img class="card-img-top bg-light border border-danger" src=" {% static 'LandingPage/img/remainder.jpg' %} " style="width:297px;height:180px;" alt="Card image cap">
+			    <div class="card-body">
+			      <h4 class="card-title text-center">Medicine Remainder</h4>
+			      <h5 class="card-text"><span class="my-font">Taking Medicine regularly and in-time is the most important one in the curing period.This website Notifies the Timings of your medicine according to your uploaded Medical Prescription.</span></h5>
+			    </div>
+			  </div>
+			  <div class="card col-sm-4 border border-danger alert alert-success" role="alert">
+			    <img class="card-img-top bg-light border border-danger" src=" {% static 'LandingPage/img/forum.jpg' %} " style="width:297px;height:180px;" alt="Card image cap">
+			    <div class="card-body">
+			      <h4 class="card-title text-center">Ask a Question..??</h4>
+			      <h5 class="card-text"><span class="my-font">Waiting for a doctor consultance is a very time consuming one.You can get the response from the doctor instantly through this website.<br><a class = "pl-5 pt-5"href="{% url 'forums' %}">Click here to Visit the Forum.</a></span></h5>
+			    </div>
+			  </div>
+			</div>
+			</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>		
+</body>
+</html>

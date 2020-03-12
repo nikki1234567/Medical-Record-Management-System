@@ -1,0 +1,102 @@
+{%extends "uploads/base.html"%}
+
+{% block content %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+      <main role="main" class="container">
+
+        <h3>Filter Journals</h3>
+        <form method="GET" action=".">
+          <div class="form-row">
+              <div class="form-group col-12">
+                  <div class="input-group">
+                      <input class="form-control py-2 border-right-0 border" type="search" name="diagnostics_name" placeholder="diagnostics_name" />
+                      <span class="input-group-append">
+                          <div class="input-group-text bg-transparent">
+                              <i class="fa fa-search"></i>
+                          </div>
+                      </span>
+                  </div>
+              </div>        
+          </div>
+          <div class="form-row">
+              <div class="form-group col-12">
+                  <div class="input-group">
+                      <input class="form-control py-2 border-right-0 border" type="search" name="report_type" placeholder="report_type" />
+                      <span class="input-group-append">
+                          <div class="input-group-text bg-transparent">
+                              <i class="fa fa-search"></i>
+                          </div>
+                      </span>
+                  </div>
+              </div>        
+          </div>
+          <div class="form-row">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="file_name" placeholder="file_name" />
+                    <span class="input-group-append">
+                        <div class="input-group-text bg-transparent">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </span>
+                </div>
+            </div>        
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4 col-lg-4">
+              <label for="date_min">From Date</label>
+              <input type="date" class="form-control" id="date_min" name="date_min">
+            </div>
+            <div class="form-group col-md-4 col-lg-4">
+              <label for="date_min">To Date</label>
+              <input type="date" class="form-control" id="date_max" name="date_max">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+        <h2>Reports</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Diagnostics Name</th>
+            <th>Report Type</th>
+            <th>Date</th>
+            <th>Download Your File</th>
+            <th></th>
+        </tr>
+
+    </thead>
+    <tbody>
+        {% for file in reports %}
+        <tr>
+            <td>{{file.diagnostics_name}}</td>
+            <td>{{file.report_type}}</td>
+            <td>{{file.date}}</td>
+
+            <td>
+                <a href="{{file.report.url}}" class ="btn btn-primary btn-sm" target="_blank">Download File</a>
+                
+            </td>
+            <td>
+                <form method="post" action="{% url 'delete_report' file.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+        
+
+
+
+{%endblock%}
+
