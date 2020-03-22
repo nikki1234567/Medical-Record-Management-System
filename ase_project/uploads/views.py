@@ -4,17 +4,19 @@ from .forms import PostForm
 from .forms import PostForm2
 from .models import  Upload_prescription
 from .models import  Upload_reports
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
+@login_required
 def home(request):
     return render(request, 'uploads/homepage.html',{'title':'Home'})
-
+@login_required
 def forum(request):
     return render(request,'uploads/forums.html',{'title':'Forum'})
-
+@login_required
 def remainder(request):
     return render(request,'uploads/project.html',{'title':'Remainder'})
-
+@login_required
 def uploads(request):
 
     if request.method == 'POST':
@@ -36,24 +38,24 @@ def uploads(request):
     else:
         return render(request,'uploads/upload.html',{'title':'Uploads'})
 
-
+@login_required
 def temporary_files(request):
     prescriptions= Upload_prescription.objects.all()
     reports =Upload_reports.objects.all()
     return render(request,'uploads/files.html',{'prescriptions':prescriptions,'reports':reports})
-
+@login_required
 def delete_prescription(request, pk):
     if request.method == 'POST':
         file = Upload_prescription.objects.get(id=pk)
         file.delete()
-    return redirect('/files')
-
+    return redirect('searchprescription')
+@login_required
 def delete_report(request, pk):
     if request.method == 'POST':
         file = Upload_reports.objects.get(id=pk)
         file.delete()
     return redirect('/files')
-
+@login_required
 def searchprescription(request):
     prescription= Upload_prescription.objects.all()
     hospital_name_query = request.GET.get('hospital_name')
@@ -77,7 +79,7 @@ def searchprescription(request):
         }
     return render(request,'uploads/prescriptionsearch.html',context)
 
-
+@login_required
 def searchreport(request):
     report= Upload_reports.objects.all()
     diagnostics_name_query = request.GET.get('diagnostics_name')
